@@ -30,8 +30,14 @@
 yarn-debug.log*
 .yarn-integrity
 
-# Ignore RSpec examples file
+# Ignore RSpec examples file.
 spec/examples.txt
 
-# Ignore coverage files
+# Ignore coverage files.
 /coverage/*
+
+# Ignore .env files.
+.env
+.env.test
+.env.local
+.env.development
