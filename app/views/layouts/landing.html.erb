@@ -8,15 +8,17 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'landing', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'landing', 'data-turbolinks-track': 'reload' %>
 
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   </head>
 
   <body>
     <%= render 'navigation' %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
+    <section class="section">
+      <%= render 'shared/flashes' %>
+      <%= yield %>
+    </section>
   </body>
 </html>
