@@ -32,3 +32,6 @@ yarn-debug.log*
 
 # Ignore RSpec examples file
 spec/examples.txt
+
+# Ignore coverage files
+/coverage/*
