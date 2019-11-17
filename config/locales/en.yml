@@ -30,6 +30,13 @@ en:
       # view
       index:
         new: New Presentation
+      presentation:
+        remove: Delete
+        confirm: It can't be undone! Are you sure?
+
+      # flashes
+      destroy:
+        success: The presentation is gone!
 
   authentication:
     not_authorized: You must be logged in to access this page
