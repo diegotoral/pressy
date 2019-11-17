@@ -3,6 +3,8 @@
 class User < ApplicationRecord
   acts_as_authentic
 
+  has_many :presentations, dependent: :delete_all
+
   validates :email,
     format: {
       with: /@/

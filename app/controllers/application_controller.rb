@@ -19,6 +19,13 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def authenticate_user!
+    return if current_user
+
+    flash[:alert] = t('authentication.not_authorized')
+    redirect_to new_user_session_path
+  end
+
   def handle_unverified_request
     current_user_session&.destroy
     redirect_to root_url

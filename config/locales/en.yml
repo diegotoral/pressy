@@ -24,3 +24,12 @@ en:
     create:
       success: Sign Up complete! Welcome!
       error: Something went wrong!
+
+  dashboard:
+    presentations:
+      # view
+      index:
+        new: New Presentation
+
+  authentication:
+    not_authorized: You must be logged in to access this page

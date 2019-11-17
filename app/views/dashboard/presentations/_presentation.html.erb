@@ -1,0 +1,43 @@
+<div class="column is-3">
+  <div class="card">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img src="https://source.unsplash.com/RWnpyGtY1aU" alt="placeholder image">
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <p class="title is-6">
+            <%= truncate presentation.name, length: 25 %>
+          </p>
+          <p class="subtitle is-7 is-muted is-family-monospace">
+            <%= distance_of_time_in_words_to_now presentation.created_at %>
+          </p>
+        </div>
+
+        <div class="media-right">
+          <div class="dropdown is-hoverable is-right is-up">
+            <div class="dropdown-trigger">
+              <button class="button is-small is-white" aria-haspopup="true">
+                <span class="icon is-small has-text-grey-lighter">
+                  <i class="fas fa-ellipsis-v"></i>
+                </span>
+              </button>
+            </div>
+
+            <div class="dropdown-menu">
+              <div class="dropdown-content">
+                <a href="#" class="dropdown-item">
+                  Preview
+                </a>
+                <a href="#" class="dropdown-item">Edit</a>
+                <a href="#" class="dropdown-item has-text-danger">Remove</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
