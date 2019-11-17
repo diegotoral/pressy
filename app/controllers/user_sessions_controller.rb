@@ -21,6 +21,8 @@ class UserSessionsController < LandingController
 
   def destroy
     current_user_session.destroy
+
+    redirect_to root_url
   end
 
   private
