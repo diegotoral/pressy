@@ -1,4 +1,6 @@
 import 'bulma'
+import 'trix'
+import '@rails/actiontext'
 import Turbolinks from 'turbolinks'
 import Notifications from '../common/notifications'
 
