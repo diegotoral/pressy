@@ -3,3 +3,11 @@ en:
     navigation:
       login: Login
       sign_up: Sign Up
+
+  user_sessions:
+    new:
+      title: Enter your login details
+      login: Login
+    create:
+      success: Welcome
+      error: Email or password invalid

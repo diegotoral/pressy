@@ -1,12 +1,8 @@
 <% content_for :navigation_end do %>
   <div class="navbar-item">
     <div class="buttons">
-      <a href="#" class="button is-text">
-        <%= t '.login' %>
-      </a>
-      <a href="#" class="button is-primary">
-        <%= t '.sign_up' %>
-      </a>
+      <%= link_to t('.login'), login_url, class: 'button is-text' %>
+      <%= link_to t('.sign_up'), login_url, class: 'button is-info' %>
     </div>
   </div>
 <% end %>

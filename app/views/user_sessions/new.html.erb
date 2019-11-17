@@ -1,0 +1,35 @@
+<div class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="column is-4 is-offset-4">
+        <%= form_with model: @user_session, id: 'user-session' do |f| %>
+          <% if notifications.any? %>
+            <% notifications.each do |notification| %>
+              <div class="notification <%= notification.css_class %>">
+                <%= notification.message %>
+              </div>
+            <% end %>
+          <% end %>
+
+          <div class="field">
+            <%= f.label :email, class: 'label' %>
+            <div class="control">
+              <%= f.text_field :email, class: 'input' %>
+            </div>
+          </div>
+
+          <div class="field">
+            <%= f.label :password, class: 'label' %>
+            <div class="control">
+              <%= f.password_field :password, class: 'input' %>
+            </div>
+          </div>
+
+          <div class="control">
+            <%= f.submit t('.login'), class: 'button is-info is-fullwidth is-rounded' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
