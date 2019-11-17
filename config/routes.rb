@@ -3,9 +3,10 @@
 Rails.application.routes.draw do
   root to: 'landing#index'
 
-  # Make fancy login and logout paths
-  get '/login', to: 'user_sessions#new'
-  resources :user_sessions, only: %i[create destroy], path: 'login'
+  # Create fancy login, logout and signup URLS.
+  delete 'login', to: 'user_sessions#destroy', as: :destroy_session
+  resources :users, only: %i[new create], path: 'signup', path_names: { new: '' }
+  resources :user_sessions, only: %i[new create], path: 'login', path_names: { new: '' }
 
   namespace :dashboard, path: 'app' do
     root to: 'presentations#index'

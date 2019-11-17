@@ -5,9 +5,22 @@ en:
       sign_up: Sign Up
 
   user_sessions:
+    # views
     new:
       title: Enter your login details
       login: Login
+
+    # flashes
     create:
       success: Welcome
       error: Email or password invalid
+
+  users:
+    # views
+    new:
+      sign_up: Sign Up
+
+    # flashes
+    create:
+      success: Sign Up complete! Welcome!
+      error: Something went wrong!
