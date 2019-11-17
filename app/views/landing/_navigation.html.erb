@@ -1,8 +1,12 @@
 <% content_for :navigation_end do %>
   <div class="navbar-item">
     <div class="buttons">
-      <%= link_to t('.login'), new_user_session_url, class: 'button is-text' %>
-      <%= link_to t('.sign_up'), new_user_url, class: 'button is-info' %>
+      <% if current_user %>
+        <%= link_to t('.go_app'), dashboard_root_url, class: 'button is-text' %>
+      <% else %>
+        <%= link_to t('.login'), new_user_session_url, class: 'button is-text' %>
+        <%= link_to t('.sign_up'), new_user_url, class: 'button is-info' %>
+      <% end -%>
     </div>
   </div>
 <% end %>

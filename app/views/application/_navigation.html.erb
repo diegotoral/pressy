@@ -4,8 +4,8 @@
       <%= current_user.email %>
     </p>
 
-    <div class="navbar-dropdown is-boxed">
-      <%= link_to destroy_session_url, class: 'navbar-item', method: :destroy do %>
+    <div class="navbar-dropdown is-right">
+      <%= link_to destroy_session_url, class: 'navbar-item', method: :delete do %>
         Logout
       <% end %>
     </div>
