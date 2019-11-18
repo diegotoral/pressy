@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem 'active_storage_validations', '~> 0.8.4'
 gem 'authlogic', '~> 5.0.4'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -25,6 +26,7 @@ end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'meta_request'
   gem 'spring'
   gem 'spring-commands-rspec', '~> 1.0.4'
   gem 'spring-watcher-listen', '~> 2.0.0'
