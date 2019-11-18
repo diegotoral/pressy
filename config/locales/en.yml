@@ -28,6 +28,8 @@ en:
   dashboard:
     presentations:
       # view
+      new:
+        save: Create Presentation
       index:
         new: New Presentation
       presentation:
@@ -35,6 +37,9 @@ en:
         confirm: It can't be undone! Are you sure?
 
       # flashes
+      create:
+        success: Presentation create!
+        error: Failed to create presentation
       destroy:
         success: The presentation is gone!
 

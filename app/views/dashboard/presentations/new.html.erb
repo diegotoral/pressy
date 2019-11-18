@@ -1,0 +1,39 @@
+<div class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <%= form_with model: [:dashboard, @presentation], id: 'presentation' do |f| %>
+        <div class="columns">
+          <div class="column is-4 is-offset-4">
+            <div class="field">
+              <%= f.label :name, class: 'label' %>
+              <div class="control">
+                <%= f.text_field :name, class: 'input' %>
+              </div>
+            </div>
+
+            <div class="field">
+              <%= f.label :description, class: 'label' %>
+              <div class="control">
+                <div class="content">
+                  <%= f.rich_text_area :description %>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <%= f.file_field :source_file %>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <%= f.submit t('.save'), class: 'button is-info is-fullwidth is-rounded' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end -%>
+    </div>
+  </div>
+</div>

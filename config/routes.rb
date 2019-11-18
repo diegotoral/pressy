@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   namespace :dashboard, path: 'app' do
     root to: 'presentations#index'
 
-    resources :presentations, only: %i[index destroy]
+    resources :presentations, only: %i[index new create destroy]
   end
 end

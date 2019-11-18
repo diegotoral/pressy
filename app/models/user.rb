@@ -27,4 +27,8 @@ class User < ApplicationRecord
       minimum: 8,
       if: :require_password?
     }
+
+  def new_presentation(params = {})
+    presentations.build(params)
+  end
 end

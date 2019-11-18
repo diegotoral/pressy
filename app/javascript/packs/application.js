@@ -1,6 +1,9 @@
 import 'bulma'
 import 'trix'
+import 'trix/dist/trix.css'
 import '@rails/actiontext'
+
+import '../stylesheets/actiontext.scss'
 
 import UJS from '@rails/ujs'
 import Turbolinks from 'turbolinks'
