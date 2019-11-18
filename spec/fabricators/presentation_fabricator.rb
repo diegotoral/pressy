@@ -19,7 +19,7 @@ end
 Fabricator :presentation do
   user
 
-  name { 'Some name' }
+  name { FFaker::Movie.unique.title }
 
   before_save do |presentation|
     source_file = load_blob_file('presentation1.pdf')
