@@ -9,6 +9,7 @@ gem 'active_storage_validations', '~> 0.8.4'
 gem 'authlogic', '~> 5.0.4'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'docsplit', '~> 0.7.6', require: false
 gem 'dotenv-rails'
 gem 'image_processing', '~> 1.2'
 gem 'pagy', '~> 3.7'
