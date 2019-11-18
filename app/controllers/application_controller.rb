@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  include Pagy::Backend
+
   helper_method :current_user_session, :current_user
 
   private
@@ -18,6 +20,11 @@ class ApplicationController < ActionController::Base
   end
 
   protected
+
+  def paginate(collection)
+    @pagy, collection = pagy(collection)
+    collection
+  end
 
   def authenticate_user!
     return if current_user

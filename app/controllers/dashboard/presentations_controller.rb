@@ -5,7 +5,7 @@ class Dashboard::PresentationsController < ApplicationController
   before_action :set_presentation, except: %i[index new create]
 
   def index
-    @presentations = current_user.presentations
+    @presentations = paginate(current_user.presentations)
   end
 
   def new

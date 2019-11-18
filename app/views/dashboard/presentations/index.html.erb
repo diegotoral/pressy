@@ -33,5 +33,9 @@
 
       <%= render @presentations, as: :presentation %>
     </div>
+
+    <div class="column is-4 is-offset-4">
+      <%== pagy_bulma_nav(@pagy) if @pagy.next %>
+    </div>
   </div>
 </section>

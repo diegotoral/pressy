@@ -11,6 +11,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'dotenv-rails'
 gem 'image_processing', '~> 1.2'
+gem 'pagy', '~> 3.7'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 gem 'rails', '~> 6.0.1'
