@@ -1,0 +1,11 @@
+en:
+  dashboard:
+    presentations:
+      new:
+        save: Create Presentation
+      index:
+        new: New Presentation
+      presentation:
+        remove: Delete
+        preview: Preview
+        confirm: It can't be undone! Are you sure?
