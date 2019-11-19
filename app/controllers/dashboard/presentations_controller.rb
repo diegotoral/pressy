@@ -5,7 +5,7 @@ class Dashboard::PresentationsController < ApplicationController
   before_action :set_presentation, except: %i[index new create]
 
   def index
-    @presentations = paginate(current_user.presentations)
+    @presentations = paginate(current_user.presentations.order(created_at: :desc))
   end
 
   def new
@@ -17,6 +17,7 @@ class Dashboard::PresentationsController < ApplicationController
 
     if @presentation.save
       flash[:success] = t('.success')
+      ExtractPresentationPagesJob.perform_later @presentation
 
       redirect_to dashboard_presentations_path
     else

@@ -11,4 +11,9 @@ class Presentation < ApplicationRecord
 
   validates :name, presence: true
   validates :source_file, attached: true, content_type: :pdf
+
+  def add_slide_from_io(io, filename, position)
+    slide = slides.create!(position: position)
+    slide.background_image.attach(io: io, filename: filename)
+  end
 end
