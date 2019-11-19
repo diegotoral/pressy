@@ -17,11 +17,11 @@
       <div class="column is-3">
         <div class="card">
           <div class="card-image">
-            <a href="">
+            <%= link_to new_dashboard_presentation_url, class: '' do %>
               <figure class="image is-4by3">
                 <%= image_tag 'new-presentation-cover.png' %>
               </figure>
-            </a>
+            <% end %>
           </div>
           <div class="card-content has-text-centered">
             <%= link_to new_dashboard_presentation_url, class: 'button is-info is-small is-fullwidth' do %>

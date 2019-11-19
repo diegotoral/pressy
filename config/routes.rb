@@ -8,9 +8,11 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create], path: 'signup', path_names: { new: '' }
   resources :user_sessions, only: %i[new create], path: 'login', path_names: { new: '' }
 
+
   namespace :dashboard, path: 'app' do
     root to: 'presentations#index'
 
+    resources :previews, only: :show
     resources :presentations, only: %i[index new create destroy]
   end
 end

@@ -2,7 +2,9 @@
   <div class="card" id="presentation-<%= presentation.id %>">
     <div class="card-image">
       <figure class="image is-4by3">
-        <img src="https://source.unsplash.com/RWnpyGtY1aU" alt="placeholder image">
+        <% if presentation.cover %>
+          <%= image_tag presentation.cover.variant(resize_to_fit: [640, 480]) %>
+        <% end %>
       </figure>
     </div>
     <div class="card-content">
@@ -28,10 +30,10 @@
 
             <div class="dropdown-menu">
               <div class="dropdown-content">
-                <a href="#" class="dropdown-item">
-                  Preview
-                </a>
+                <%= link_to t('.preview'), dashboard_preview_url(presentation), class: 'dropdown-item', target: '_blank' %>
+
                 <a href="#" class="dropdown-item">Edit</a>
+
                 <%= link_to t('.remove'),
                       dashboard_presentation_url(presentation),
                       class: 'dropdown-item has-text-danger',

@@ -1,0 +1,5 @@
+<h1><%= @presentation.name %></h1>
+
+<% @presentation.slides.each do |slide| %>
+  <p><%= image_tag slide.background_image.variant(resize_to_limit: [350, 350]) %></p>
+<% end -%>
