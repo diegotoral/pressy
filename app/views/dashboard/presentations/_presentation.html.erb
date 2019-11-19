@@ -30,15 +30,20 @@
 
             <div class="dropdown-menu">
               <div class="dropdown-content">
-                <%= link_to t('.preview'), dashboard_preview_url(presentation), class: 'dropdown-item', target: '_blank' %>
+                <%= link_to t('.preview'),
+                  dashboard_preview_url(presentation),
+                  class: 'dropdown-item',
+                  target: '_blank' %>
 
-                <a href="#" class="dropdown-item">Edit</a>
+                <%= link_to t('.edit'),
+                  edit_dashboard_presentation_url(presentation),
+                  class: 'dropdown-item' %>
 
                 <%= link_to t('.remove'),
-                      dashboard_presentation_url(presentation),
-                      class: 'dropdown-item has-text-danger',
-                      method: :delete,
-                      data: { confirm: t('.confirm') } %>
+                  dashboard_presentation_url(presentation),
+                  class: 'dropdown-item has-text-danger',
+                  method: :delete,
+                  data: { confirm: t('.confirm') } %>
               </div>
             </div>
           </div>

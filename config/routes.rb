@@ -13,6 +13,6 @@ Rails.application.routes.draw do
     root to: 'presentations#index'
 
     resources :previews, only: :show
-    resources :presentations, only: %i[index new create destroy]
+    resources :presentations
   end
 end

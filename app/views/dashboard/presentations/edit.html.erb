@@ -1,0 +1,11 @@
+<% props = {
+  name: @presentation.name,
+  cover: url_for(@presentation.cover.variant(resize_to_fit: [870, 581])),
+  slides: @slides,
+  urls: {
+    presentations: dashboard_presentations_url
+  }
+}.to_json %>
+
+<div id="app" data="<%= props %>">
+</div>

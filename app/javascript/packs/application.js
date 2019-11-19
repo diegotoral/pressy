@@ -11,7 +11,7 @@ import Turbolinks from 'turbolinks'
 import TurbolinksAdapter from 'vue-turbolinks'
 import Notifications from '../common/notifications'
 
-import App from '../app.vue'
+import PresentationEditor from '../PresentationEditor.vue'
 
 UJS.start()
 Turbolinks.start()
@@ -34,7 +34,7 @@ document.addEventListener('turbolinks:load', () => {
         }
       },
 
-      render: h => h(App, { props }),
+      render: h => h(PresentationEditor, { props }),
     })
   }
 })

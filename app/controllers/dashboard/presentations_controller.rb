@@ -27,6 +27,12 @@ class Dashboard::PresentationsController < ApplicationController
     end
   end
 
+  def edit
+    @slides = @presentation.slides
+      .map(&:background_image)
+      .map { |image| url_for image.variant(resize_to_fit: [480, 320]) }
+  end
+
   def destroy
     @presentation.destroy
     flash[:success] = t('.success')
