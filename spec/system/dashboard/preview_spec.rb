@@ -15,6 +15,6 @@ RSpec.describe 'Preview Presentation', type: :system do
       click_on t('dashboard.presentations.presentation.preview')
     end
 
-    expect(page).to have_content presentation.name
+    expect(page).to have_content presentation.name.truncate(25)
   end
 end
