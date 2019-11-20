@@ -38,34 +38,3 @@
 .notifications {
   margin-top: 15px;
 }
-
-.presentation-editor {
-  min-height: calc(100vh - 52px);
-  max-height: calc(100vh - 52px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: space-between;
-  width: 100%;
-
-  .toolbar {
-    display: flex;
-    padding: 15px;
-
-    .has-addons {
-      justify-content: center;
-    }
-  }
-
-  .slide {
-    flex: 5;
-  }
-
-  .timeline {
-    padding: 15px 30px;
-
-    .columns {
-      overflow-x: scroll;
-    }
-  }
-}

@@ -1,21 +1,32 @@
 <template>
-  <div class="columns is-centered">
-    <div
-      v-for="(slide, index) in slides"
-      class="column is-2"
+  <div class="container">
+    <draggable
+      :list="list"
+      tag="div"
+      class="columns is-centered"
+      @start="dragging = true"
+      @end="dragging = false"
     >
-      <figure
-        class="image is-3by2"
-        :class="{ 'is-active': selected == index }"
-        @click="$emit('selected', index)"
+      <div
+        v-for="(slide, index) in list"
+        :key="index"
+        class="column is-2"
       >
-        <img :src="slide" alt="slide">
-      </figure>
-    </div>
+        <figure
+          class="image thumbnail is-3by2"
+          :class="{ 'is-active': selected == index }"
+          @click="$emit('selected', index)"
+        >
+          <img :src="slide.url" alt="slide">
+        </figure>
+      </div>
+    </draggable>
   </div>
 </template>
 
 <script>
+import draggable from 'vuedraggable'
+
 export default {
   props: {
     slides: {
@@ -27,6 +38,19 @@ export default {
       type: Number,
       required: true,
     },
+  },
+
+  components: {
+    draggable,
+  },
+
+  data() {
+    return {
+      dragging: false,
+      list: this.slides.map((url, index) => {
+        return { url: url, position: index + 1 }
+      }),
+    }
   },
 }
 </script>

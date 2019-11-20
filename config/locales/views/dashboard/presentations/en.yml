@@ -5,6 +5,7 @@ en:
         save: Create Presentation
       index:
         new: New Presentation
+
       presentation:
         remove: Delete
         preview: Preview

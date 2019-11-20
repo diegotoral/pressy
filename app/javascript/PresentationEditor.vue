@@ -1,19 +1,12 @@
 <template>
-  <div class="presentation-editor">
-    <div class="toolbar">
+  <div class="hero is-fullheight-with-navbar">
+    <div class="hero-head">
       <div class="container">
-        <nav class="breadcrumb is-small has-dot-separator">
-          <ul>
-            <li><a :href="urls.presentations">Presentations</a></li>
-            <li class="is-active"><a href="#">{{ name }}</a></li>
-          </ul>
-        </nav>
-
-        <Toolbar />
+        <Toolbar :presentation="{ name: 'Test 123' }" />
       </div>
     </div>
 
-    <div class="slide">
+    <div class="hero-body preview">
       <div class="container">
         <div class="column is-8 is-offset-2">
           <figure class="image is-3by2">
@@ -23,14 +16,12 @@
       </div>
     </div>
 
-    <div class="timeline">
-      <div class="container">
-        <Timeline
-          :slides="slides"
-          :selected="selectedSlide"
-          @selected="selectSlide"
-        />
-      </div>
+    <div class="hero-foot timeline">
+      <Timeline
+        :slides="slides"
+        :selected="selectedSlide"
+        @selected="selectSlide"
+      />
     </div>
   </div>
 
@@ -80,3 +71,16 @@
     },
   }
 </script>
+
+<style lang="scss">
+.preview {
+  align-items: baseline;
+}
+
+.timeline {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+}
+</style>
