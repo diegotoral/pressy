@@ -50,5 +50,9 @@ export default {
   align-items: center;
   padding: 0 1rem;
   min-height: 3.25em!important;
+
+  .title {
+    font-weight: 700;
+  }
 }
 </style>

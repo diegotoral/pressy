@@ -15,8 +15,10 @@
   </head>
 
   <body>
-    <%= render 'navigation' %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
+    <div data-vue>
+      <%= render 'navigation' %>
+      <%= render 'shared/flashes' %>
+      <%= yield %>
+    </div>
   </body>
 </html>

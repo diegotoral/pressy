@@ -3,11 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Presentations Dashboard', type: :system do
-  let(:user) do
-    Fabricate(:user, email: 'foo@email.com', password: '123456789').tap do |user|
-      Fabricate.times(2, :presentation, user: user)
-    end
-  end
+  let(:user) { Fabricate(:user, email: 'foo@email.com', password: '123456789') }
+  let(:presentations) { Fabricate.times(2, :presentation, user: user) }
 
   scenario 'user can list all presentations he created' do
     login_as user
@@ -19,7 +16,7 @@ RSpec.describe 'Presentations Dashboard', type: :system do
   end
 
   scenario 'user can delete a presentation' do
-    presentation = user.presentations.first
+    presentation = presentations.first
 
     login_as user
     visit dashboard_presentations_path
@@ -66,5 +63,26 @@ RSpec.describe 'Presentations Dashboard', type: :system do
     end
 
     expect(page).to have_content t('dashboard.presentations.create.error')
+  end
+
+  scenario 'user can edit name and description of any presentation' do
+    presentation = presentations.first
+
+    login_as user
+    visit dashboard_presentations_path
+
+    within "#presentation-#{presentation.id}" do
+      find('.dropdown-trigger').hover
+      click_on t('dashboard.presentations.presentation.edit')
+    end
+
+    find('#presentation-options').click
+
+    within 'form#presentation-form' do
+      fill_in 'Name', with: 'New name'
+      click_on 'Update Presentation'
+    end
+
+    expect(page).to have_content 'New name'
   end
 end

@@ -1,0 +1,18 @@
+<section class="section">
+  <div class="field">
+    <%= f.label :name, class: 'label' %>
+    <div class="control">
+      <%= f.text_field :name, class: 'input' %>
+    </div>
+    <% if f.object.errors[:name].any? %>
+      <p class="help is-danger"><%= f.object.errors.full_messages_for(:name).first %></p>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description, class: 'label' %>
+    <div class="control is-fullheight">
+      <%= f.rich_text_area :description, class: 'editor' %>
+    </div>
+  </div>
+</section>

@@ -33,6 +33,18 @@ class Dashboard::PresentationsController < ApplicationController
       .map { |image| url_for image.variant(resize_to_fit: [480, 320]) }
   end
 
+  def update
+    if @presentation.update_attributes presentation_params
+      flash[:success] = t('.success')
+
+      redirect_to dashboard_presentations_path
+    else
+      flash[:error] = t('.error')
+
+      render :edit, layout: false, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @presentation.destroy
     flash[:success] = t('.success')

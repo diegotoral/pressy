@@ -1,10 +1,32 @@
-<% props = {
-  presentation: @presentation.as_json(only: %i[id name description]),
-  cover: url_for(@presentation.cover.variant(resize_to_fit: [870, 581])),
-  slides: @slides,
-  urls: {
-    presentations: dashboard_presentations_url
-  }
-}.to_json %>
+<presentation-editor inline-template
+  :presentation="<%= @presentation.as_json(only: %i[id name description]).to_json %>"
+  :slides="<%= @slides.to_json %>"
+  :urls="<%= Hash[presentations: dashboard_presentations_url].to_json %>"
+  cover="<%= url_for(@presentation.cover&.variant(resize_to_fit: [870, 581])) %>"
+>
+  <div class="hero is-fullheight-with-navbar">
+    <div class="hero-head">
+      <div class="container">
+        <%= render 'toolbar', presentation: @presentation %>
+      </div>
+    </div>
 
-<div id="app" data="<%= props %>"></div>
+    <div class="hero-body preview">
+      <div class="container">
+        <div class="column is-8 is-offset-2">
+          <figure class="image is-3by2">
+            <img :src="currentSlide" alt="slide">
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-foot timeline">
+      <Timeline
+        :slides="slides"
+        :selected="selectedSlide"
+        @selected="selectSlide"
+      />
+    </div>
+  </div>
+</presentation-editor>
