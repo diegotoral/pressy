@@ -5,10 +5,11 @@
         <nav class="breadcrumb is-small" aria-label="breadcrumbs">
           <ul>
             <li><a href="#">Presentations</a></li>
-            <li><a href="#" class="is-active">{{ presentation.name }}</a></li>
+            <li class="is-active">
+              <a href="#">{{ presentation.name }}</a>
+            </li>
           </ul>
         </nav>
-
       </div>
     </div>
 
@@ -57,7 +58,7 @@
       </div>
     </div>
 
-    <OptionsForm ref="options" />
+    <OptionsForm ref="options" :presentation="presentation" />
   </div>
 </template>
 

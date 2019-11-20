@@ -2,7 +2,7 @@
   <div class="hero is-fullheight-with-navbar">
     <div class="hero-head">
       <div class="container">
-        <Toolbar :presentation="{ name: 'Test 123' }" />
+        <Toolbar :presentation="presentation" />
       </div>
     </div>
 
@@ -33,9 +33,9 @@
 
   export default {
     props: {
-      name: {
-        type: String,
-        default: 'No name',
+      presentation: {
+        type: Object,
+        required: true,
       },
 
       slides: {

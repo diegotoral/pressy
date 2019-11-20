@@ -6,12 +6,18 @@
     <template #default>
       <section class="section">
         <div class="field">
-          <label for="" class="label">Name</label>
-          <div class="control"><input type="text" class="input"></div>
+          <label class="label">Name</label>
+          <div class="control">
+            <input
+              v-model="presentation.name"
+              type="text"
+              class="input"
+            >
+          </div>
         </div>
 
         <div class="field">
-          <label for="" class="label">Description</label>
+          <label class="label">Description</label>
           <div class="control">
             <textarea type="text" class="textarea" rows="15"></textarea>
           </div>
@@ -34,6 +40,13 @@
 import QuickView from './QuickView'
 
 export default {
+  props: {
+    presentation: {
+      type: Object,
+      required: true,
+    },
+  },
+
   components: {
     QuickView,
   },

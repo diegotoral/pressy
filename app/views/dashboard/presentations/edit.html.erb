@@ -1,5 +1,5 @@
 <% props = {
-  name: @presentation.name,
+  presentation: @presentation.as_json(only: %i[id name description]),
   cover: url_for(@presentation.cover.variant(resize_to_fit: [870, 581])),
   slides: @slides,
   urls: {
