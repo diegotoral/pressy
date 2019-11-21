@@ -12,7 +12,22 @@
   </a>
 </p>
 
-*pressy* is a web based app for creating interactive presentations out of PDF files.
+*pressy* is a web based app for creating interactive presentations from *boring* PDF files.
+
+## Features
+
+*pressy* main features are:
+
+- [x] Simpe user sign up with email
+- [x] Support for creating presentations from PDF files
+- [x] Presentations management (create, update, delete)
+- [x] Preview presentations
+- [ ] Support for adding audio to slides with drag & drop
+- [ ] Slides sorting
+- [ ] Interactive elements (polls, free text question, embed YouTube videos)
+- [ ] Presentation statistics (answers, views, etc)
+- [ ] Answers report dashboard
+- [ ] Presentation exporter (zip)
 
 ## Codebase
 
@@ -31,6 +46,7 @@ This section provides a high-level requirement & quick start guide.
 - [PostgreSQL](https://www.postgresql.org/) 9.4 or higher.
 - [ImageMagick](https://imagemagick.org/): please refer to ImageMagick's [installation instructions](https://imagemagick.org/script/download.php). Alternatively, macOS users can install ImageMagick with `brew install imagemagick`
 - A process manager: we recommend using [hivemind](https://github.com/DarthSim/hivemind)
+- [Docksplit](http://documentcloud.github.io/docsplit/): please refer to their [Installation & Dependencies](http://documentcloud.github.io/docsplit#installation)
 
 ### Standard Installation
 
@@ -58,3 +74,7 @@ We use [Spring](https://github.com/rails/spring), and it is already included in 
 
 1. Use the provided bin stubs to start Spring automatically, i.e. `bin/rails server`, `bin/rspec spec/models/`, `bin/rails db:migrate`.
 1. If Spring isn't picking up on new changes, use `spring stop`.
+
+## Deployment
+
+[coming soon!]
