@@ -10,6 +10,9 @@
   <a href="">
     <img src="https://app.codeship.com/projects/a34eb3f0-eac2-0137-833d-22ee8611456c/status?branch=master" alt="Codeship Status">
   </a>
+  <a href='https://coveralls.io/github/diegotoral/pressy'>
+    <img src='https://coveralls.io/repos/github/diegotoral/pressy/badge.svg' alt='Coverage Status' />
+  </a>
 </p>
 
 *pressy* is a web based app for creating interactive presentations from *boring* PDF files.
