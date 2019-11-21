@@ -9,6 +9,7 @@ gem 'acts_as_list', '~> 1.0.0'
 gem 'active_storage_validations', '~> 0.8.4'
 gem 'authlogic', '~> 5.0.4'
 gem 'bcrypt', '~> 3.1.7'
+gem 'coveralls', require: false
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'docsplit', '~> 0.7.6', require: false
 gem 'dotenv-rails'
